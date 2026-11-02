@@ -1,0 +1,228 @@
+/* =====================================
+   GENERAL PAGE
+===================================== */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+    background: #000;
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* =====================================
+   OPENING SECTION
+===================================== */
+
+/*
+The opening section retains its original height.
+*/
+
+.opening-section {
+    position: relative;
+    width: 100%;
+    height: 1600vh;
+    background: #000;
+}
+
+.opening-visual {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    height: 100svh;
+    overflow: hidden;
+    background: #000;
+    z-index: 1;
+}
+
+.frame-container {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+
+/* =====================================
+   ANIMATED IMAGE
+===================================== */
+
+.door-frame {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0;
+    transform: scale(1.15);
+    transform-origin: center center;
+    transition: none;
+    will-change: transform, opacity;
+}
+
+.door-frame.active {
+    opacity: 0.2;
+}
+
+
+/* =====================================
+   BLACK GRADIENT
+===================================== */
+
+.black-gradient {
+    display: none;
+}
+
+
+/* =====================================
+   POEM
+===================================== */
+
+#poem {
+    position: absolute;
+    width: min(70vw, 800px);
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    padding: 0;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    color: white;
+    font-family: Georgia, serif;
+    box-sizing: border-box;
+}
+
+.poem-lines {
+    width: 100%;
+}
+
+.poem-line {
+    margin: 0 0 0.45em 0;
+    text-align: justify;
+    text-align-last: justify;
+    transition: opacity 0.1s linear;
+}
+
+.final-poem-line {
+    opacity: 1;
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 700px) {
+
+    #poem {
+        width: 75%;
+        font-size: clamp(14px, 3.5vw, 18px);
+    }
+
+}
+
+/* SECOND SECTION: BLACK SCREEN */
+
+/* LONG SCROLL SECTION */
+
+.black-section {
+    position: relative;
+    width: 100%;
+    height: 11300vh;
+    margin: 0;
+    padding: 0;
+    background: #000;
+}
+
+.black-stage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    height: 100svh;
+    overflow: hidden;
+    background: #000;
+    z-index: 20;
+}
+
+/* CENTER TEXT */
+
+.black-section-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    text-align: center;
+    color: white;
+    font-family: Georgia, serif;
+    font-size: clamp(18px, 2vw, 28px);
+    z-index: 5;
+    opacity: 1;
+}
+
+/* FULL-SCREEN PATH IMAGES */
+
+.path-container {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    z-index: 1;
+}
+
+.path-frame {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0;
+}
+
+#pathA {
+    opacity: 1;
+}
+
+/* LEGS IMAGE SEQUENCE */
+
+.legs-image {
+    position: absolute;
+    width: 20%;
+    height: auto;
+    max-height: 40%;
+    object-fit: contain;
+    object-position: center;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transform-origin: center center;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.final-legs-text {
+    position: absolute;
+    top: 39%;
+    left: 49.4%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: Georgia, serif;
+    font-size: 0.5rem;
+    text-align: center;
+    width: 80%;
+    z-index: 10;
+
+    opacity: 0;
+    pointer-events: none;
+}
